@@ -126,3 +126,7 @@
   @apply !text-center !flex !justify-center;
   @apply !rounded-md !transition-all !w-full;
 }
+
+/* *{
+  border: 1px solid red;
+} */

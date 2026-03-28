@@ -2,7 +2,7 @@ import Main from "@/components/task/Main";
 
 const page = () => {
   return (
-    <div className="h-screen flex flex-col items-center justify-center">
+    <div className="h-screen w-screen pt-20">
       <Main />
     </div>
   );
