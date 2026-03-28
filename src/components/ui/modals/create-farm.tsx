@@ -45,8 +45,9 @@ interface farmAccount {
   signerBump: number;
 }
 
-export const CreateFarmModal = () => {
+export const CreateFarmModal = ({ onSuccess }: { onSuccess?: () => void }) => {
   const { initializeFarm, isLoading, isReady } = useInitializeFarm();
+  const [open, setOpen] = useState(false);
   const [farm, setFarm] = useState<PublicKey | null>(null);
   const [farmAccount, setFarmAccount] = useState<farmAccount | null>();
   const {
@@ -66,13 +67,15 @@ export const CreateFarmModal = () => {
       setFarm(farm);
       setFarmAccount(farmAccount);
       console.log(farmAccount);
+      setOpen(false);
+      onSuccess?.();
     } catch (error) {
       console.log(error);
       toast.error("farm not created, something went wrong.");
     }
   };
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>Create Your Own Farm!</Button>
       </DialogTrigger>
