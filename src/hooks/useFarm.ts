@@ -27,7 +27,7 @@ export const useInitializeFarm = () => {
 
 
         try {
-            const farmPdaAdd = farmPda(owner);
+            const farmPdaAdd = farmPda(owner, farmName);
             const paymentMintAdd = paymentMint();
             const farmPaymentVaultAdd = farmPaymentVault(farmPdaAdd);
             const farmRevenueVaultAdd = farmRevenueVault(farmPdaAdd);

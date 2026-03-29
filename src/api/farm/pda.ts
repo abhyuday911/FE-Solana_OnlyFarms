@@ -1,8 +1,11 @@
 import { FarmProgramId } from '@/constants/farm-tokenization/ProgromId'
 import { PublicKey } from '@solana/web3.js'
 
-export const farmPda = (farmOwnerPubKey: PublicKey) => {
-    const [farmPda] = PublicKey.findProgramAddressSync([Buffer.from("farm"), farmOwnerPubKey.toBuffer()], FarmProgramId);
+export const farmPda = (farmOwnerPubKey: PublicKey, name: string) => {
+    const [farmPda] = PublicKey.findProgramAddressSync(
+        [Buffer.from("farm"), farmOwnerPubKey.toBuffer(), Buffer.from(name)], 
+        FarmProgramId
+    );
     return farmPda;
 }
 

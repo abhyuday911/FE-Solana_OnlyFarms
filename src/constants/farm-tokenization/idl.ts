@@ -1,5 +1,5 @@
 export const farmIdl = {
-    "address": "Ard8wQpNdajcUvc9amhbxqdPHt6rDotjDWyt4NTTCkmT",
+    "address": "2dLysFbhrftGHHpGdsLeDHeCQoqXUAEtQk2qtRt7amCc",
     "metadata": {
         "name": "farm_tokenization",
         "version": "0.1.0",
@@ -42,6 +42,10 @@ export const farmIdl = {
                             {
                                 "kind": "account",
                                 "path": "owner"
+                            },
+                            {
+                                "kind": "arg",
+                                "path": "name"
                             }
                         ]
                     }
